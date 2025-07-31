@@ -217,6 +217,37 @@ const HomePage: React.FC = () => {
         </div>
       </div>
 
+      {/* Blog Section - com fundo cinza escuro */}
+      <div className="relative z-10 py-20" style={{ backgroundColor: 'rgb(45, 46, 45)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Blog
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Conteúdo exclusivo sobre autoconfiança, alta performance e desenvolvimento pessoal
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto space-y-6">
+            {blogPosts.map((post, index) => (
+              <BlogCard key={index} {...post} />
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <button className="bg-[#E8C061] hover:bg-[#d4b050] text-[#2D2E2D] font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+              VER TODOS OS POSTS
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Image Slider Section - Full Width */}
+      <div className="relative z-10">
+        <ImageSlider slides={sliderData} />
+      </div>
+
       {/* Services Section - com fundo cinza escuro */}
       <div className="relative z-10 py-20" style={{ backgroundColor: 'rgb(45, 46, 45)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -273,37 +304,6 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Blog Section - com fundo cinza escuro */}
-      <div className="relative z-10 py-20" style={{ backgroundColor: 'rgb(45, 46, 45)' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Blog
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Conteúdo exclusivo sobre autoconfiança, alta performance e desenvolvimento pessoal
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto space-y-6">
-            {blogPosts.map((post, index) => (
-              <BlogCard key={index} {...post} />
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <button className="bg-[#E8C061] hover:bg-[#d4b050] text-[#2D2E2D] font-bold py-3 px-8 rounded-lg transition-colors duration-300">
-              VER TODOS OS POSTS
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Image Slider Section - Full Width */}
-      <div className="relative z-10">
-        <ImageSlider slides={sliderData} />
       </div>
 
       {/* Contact Section - com fundo cinza escuro */}
