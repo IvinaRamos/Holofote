@@ -18,7 +18,7 @@ import {
   faUser,
   faComments
 } from '@fortawesome/free-solid-svg-icons';
-import Header from '../../components/Header';
+import Header from './Header';
 
 const HomePage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
