@@ -1,0 +1,86 @@
+import React from 'react';
+
+interface BlogCardProps {
+  image: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  authorImage: string;
+  date: string;
+  readTime: string;
+  views: string;
+}
+
+const BlogCard: React.FC<BlogCardProps> = ({ 
+  image, 
+  title, 
+  excerpt, 
+  author, 
+  authorImage, 
+  date, 
+  readTime, 
+  views 
+}) => {
+  return (
+    <div className="bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mb-6">
+      <div className="flex flex-col lg:flex-row">
+        {/* Image Section - Left Side */}
+        <div className="lg:w-1/2">
+          <div className="relative h-64 lg:h-auto lg:min-h-[355px] overflow-hidden">
+            <img 
+              src={image} 
+              alt={title}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+        
+        {/* Content Section - Right Side */}
+        <div className="lg:w-1/2 p-8 lg:p-12">
+          {/* Title */}
+          <h3 className="text-2xl lg:text-3xl font-bold text-[#2D2E2D] mb-4 line-clamp-3 leading-tight">
+            {title}
+          </h3>
+          
+          {/* Excerpt */}
+          <p className="text-gray-600 text-base mb-6 line-clamp-4 leading-relaxed">
+            {excerpt}
+          </p>
+          
+          {/* Author and Metadata */}
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center space-x-3">
+              {/* Author Image */}
+              <div className="w-8 h-8 rounded-full overflow-hidden">
+                <img 
+                  src={authorImage} 
+                  alt={`Foto do escritor: ${author}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Author Name */}
+              <span className="text-sm font-medium text-[#2D2E2D] hover:text-[#E8C061] transition-colors cursor-pointer">
+                {author}
+              </span>
+            </div>
+            
+            {/* Date and Read Time */}
+            <div className="flex items-center space-x-2 text-xs text-gray-500">
+              <span title={date}>{date}</span>
+              <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
+              <span title={readTime}>{readTime}</span>
+            </div>
+          </div>
+          
+          {/* Views */}
+          <div className="text-xs text-gray-500">
+            <span>{views}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BlogCard; 

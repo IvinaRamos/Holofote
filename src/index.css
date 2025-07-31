@@ -1,13 +1,40 @@
 @import './styles/animations.css';
 @import "tailwindcss";
 
-/* :root {
-  --color-primary: #9261B2;
-  --color-secondary: #7C3AAD;
-  --color-background: #F3F4F6;
-  --color-bg-rosado: #F8F6FA;
-} */
+/* Custom CSS for line-clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
-/* body {
-  background: var(--color-background);
-} */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8C061;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4b050;
+}
