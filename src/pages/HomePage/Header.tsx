@@ -130,7 +130,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage = 'home' }) => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button className="text-white hover:text-[#E8C061] transition-colors">
+            <button className="text-white hover:text-[#CFB16D] transition-colors">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
               </svg>
@@ -141,11 +141,11 @@ const Header: React.FC<HeaderProps> = ({ currentPage = 'home' }) => {
         {/* Mobile Navigation */}
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/" className="block px-3 py-2 text-white hover:text-[#E8C061]">HOME</a>
-            <a href="/sobre" className="block px-3 py-2 text-white hover:text-[#E8C061]">SOBRE</a>
-            <a href="/servicos" className="block px-3 py-2 text-white hover:text-[#E8C061]">SERVIÇOS</a>
-            <a href="/contato" className="block px-3 py-2 text-white hover:text-[#E8C061]">CONTATO</a>
-            <a href="/blog" className="block px-3 py-2 text-white hover:text-[#E8C061]">BLOG</a>
+            <a href="/" className="block px-3 py-2 text-white hover:text-[#CFB16D]">HOME</a>
+            <a href="/sobre" className="block px-3 py-2 text-white hover:text-[#CFB16D]">SOBRE</a>
+            <a href="/servicos" className="block px-3 py-2 text-white hover:text-[#CFB16D]">SERVIÇOS</a>
+            <a href="/contato" className="block px-3 py-2 text-white hover:text-[#CFB16D]">CONTATO</a>
+            <a href="/blog" className="block px-3 py-2 text-white hover:text-[#CFB16D]">BLOG</a>
           </div>
         </div>
       </div>
