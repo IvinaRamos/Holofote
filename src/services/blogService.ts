@@ -80,14 +80,29 @@ export const blogService = {
   // Incrementar contador de visualizações
   async incrementViews(id: number): Promise<void> {
     try {
-      const { error } = await supabase
+      // Primeiro, buscar o post atual para obter o views_count
+      const { data: currentPost, error: fetchError } = await supabase
         .from('blog_posts')
-        .update({ views_count: supabase.rpc('increment_views', { post_id: id }) })
+        .select('views_count')
+        .eq('id', id)
+        .single();
+
+      if (fetchError) {
+        console.error('Erro ao buscar post para incrementar visualizações:', fetchError);
+        throw fetchError;
+      }
+
+      // Incrementar o contador
+      const newViewsCount = (currentPost.views_count || 0) + 1;
+      
+      const { error: updateError } = await supabase
+        .from('blog_posts')
+        .update({ views_count: newViewsCount })
         .eq('id', id);
 
-      if (error) {
-        console.error('Erro ao incrementar visualizações:', error);
-        throw error;
+      if (updateError) {
+        console.error('Erro ao incrementar visualizações:', updateError);
+        throw updateError;
       }
     } catch (error) {
       console.error('Erro no serviço de blog:', error);

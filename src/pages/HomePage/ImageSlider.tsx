@@ -35,7 +35,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ slides }) => {
   };
 
   return (
-    <div className="relative w-full h-96 overflow-hidden">
+    <div className="relative w-full h-[500px] overflow-hidden">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -91,20 +91,22 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ slides }) => {
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-4 h-4 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? 'bg-white border-2 border-white'
-                : 'bg-white bg-opacity-50 hover:bg-opacity-75 border-2 border-white'
+      {slides.length > 0 && (
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 shadow-lg border-2 ${
+                index === currentSlide
+                  ? 'bg-white border-white scale-110'
+                  : 'bg-white bg-opacity-20 hover:bg-opacity-40 border-white hover:scale-110'
             }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface BlogCardProps {
+  id: number;
   image: string;
   title: string;
   excerpt: string;
@@ -12,6 +14,7 @@ interface BlogCardProps {
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ 
+  id,
   image, 
   title, 
   excerpt, 
@@ -21,12 +24,30 @@ const BlogCard: React.FC<BlogCardProps> = ({
   readTime, 
   views 
 }) => {
+  const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleClick = () => {
+    navigate(`/blog/${id}`);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
             <div className="bg-white border border-[#FDFAFA] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mb-6">
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col lg:flex-row lg:h-full">
         {/* Image Section - Left Side */}
         <div className="lg:w-1/2">
-          <div className="relative h-64 lg:h-auto lg:min-h-[355px] overflow-hidden">
+          <div 
+            className="relative h-64 lg:h-full overflow-hidden cursor-pointer"
+            onClick={handleClick}
+          >
             <img 
               src={image} 
               alt={title}
@@ -38,12 +59,26 @@ const BlogCard: React.FC<BlogCardProps> = ({
         {/* Content Section - Right Side */}
         <div className="lg:w-1/2 p-8 lg:p-12">
           {/* Title */}
-                        <h3 className="text-2xl lg:text-3xl font-bold text-[#2D2E2D] mb-4 line-clamp-3 leading-tight">
+                        <h3 
+                          className={`text-2xl lg:text-3xl font-bold mb-4 line-clamp-3 leading-tight cursor-pointer transition-colors ${
+                            isHovered ? 'text-[#CFB16D]' : 'text-[#2D2E2D]'
+                          }`}
+                          onClick={handleClick}
+                          onMouseEnter={handleMouseEnter}
+                          onMouseLeave={handleMouseLeave}
+                        >
             {title}
           </h3>
           
           {/* Excerpt */}
-                        <p className="text-[#2D2E2D] text-base mb-6 line-clamp-4 leading-relaxed">
+                        <p 
+                          className={`text-base mb-6 line-clamp-4 leading-relaxed cursor-pointer transition-colors ${
+                            isHovered ? 'text-[#CFB16D]' : 'text-[#2D2E2D]'
+                          }`}
+                          onClick={handleClick}
+                          onMouseEnter={handleMouseEnter}
+                          onMouseLeave={handleMouseLeave}
+                        >
             {excerpt}
           </p>
           

@@ -169,6 +169,7 @@ const HomePage: React.FC = () => {
               blogPosts.map((post) => (
                 <BlogCard 
                   key={post.id}
+                  id={post.id}
                   image={post.image_url}
                   title={post.title}
                   excerpt={post.excerpt}
