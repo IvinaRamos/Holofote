@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logoHolofote from '../../assets/img/logoHolofote.png';
 
 interface HeaderProps {
   currentPage?: string;
@@ -19,11 +20,11 @@ const Header: React.FC<HeaderProps> = ({ currentPage = 'home' }) => {
           <div className="flex-shrink-0">
             <a href="/" className="block">
               <img 
-                src="https://static.wixstatic.com/media/ef2ab8_a761222198a14031ae22da4b22eaadd2~mv2.png/v1/fill/w_144,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo-mind-your-best-color-branco.png"
-                alt="Logomarca Mind Your Best"
-                className="h-12 w-auto object-contain"
-                width="144"
-                height="80"
+                src={logoHolofote}
+                alt="Logomarca Holofote"
+                className="h-12 w-12 object-cover rounded-full"
+                width="48"
+                height="48"
               />
             </a>
           </div>
