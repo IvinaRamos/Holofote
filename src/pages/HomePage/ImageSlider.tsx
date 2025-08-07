@@ -35,7 +35,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ slides }) => {
   };
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden">
+    <div className="relative w-full h-[500px] overflow-hidden" style={{ backgroundColor: '#CFB16D' }}>
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -53,10 +53,10 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ slides }) => {
           {/* Overlay with quote */}
           <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
             <div className="text-center text-white px-8 max-w-4xl">
-              <blockquote className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+              <blockquote className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-6 leading-tight">
                 "{slide.quote}"
               </blockquote>
-              <cite className="text-xl md:text-2xl lg:text-3xl font-medium">— {slide.author}</cite>
+              <cite className="text-lg md:text-xl lg:text-2xl font-medium">— {slide.author}</cite>
             </div>
           </div>
 

@@ -5,7 +5,6 @@ import ImageSlider from './ImageSlider';
 import Footer from './Footer';
 import SocialMediaFloat from './SocialMediaFloat';
 import fundoImg from '../../assets/img/fundoimg.png';
-import homemLendo from '../../assets/img/homemlendo.png';
 import { blogService, BlogPost } from '../../services/blogService';
 import { sliderService, SliderData } from '../../services/sliderService';
 
@@ -35,6 +34,8 @@ const HomePage: React.FC = () => {
 
     fetchBlogPosts();
   }, []);
+
+  console.log(blogPosts);
 
   // Buscar dados do slider do Supabase
   useEffect(() => {
@@ -81,54 +82,28 @@ const HomePage: React.FC = () => {
             <div className="max-w-4xl">
               {/* Main Title */}
               <h1 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-bold text-white leading-tight mb-8">
-                Uma nova luz sobre temas que já estão aí, mas ainda pedem presença.
+                Um olhar além do óbvio para temas que você achava que conhecia
               </h1>
               
               {/* Subtitle */}
-              <p className="text-lg sm:text-lg lg:text-xl xl:text-2xl font-medium italic text-[#CFB16D] leading-relaxed mb-8">
-                O Holofote nasce para aprofundar temas que já ecoam nas redes, mas que pedem tempo, sensibilidade e coragem para realmente nos atravessarem.
+              <p className="text-lg sm:text-lg lg:text-xl xl:text-2xl font-medium italic text-[#CFB16D] leading-relaxed mb-16">
+                O Holofote lança luz com coragem em questões sobre desenvolvimento humano e autoconhecimento.
               </p>
-              
-              {/* CTA Button */}
-              <button className="bg-[#CFB16D] hover:bg-[#CFB16D] text-[#FDFAFA] font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 transform hover:scale-105 mb-16">
-                SAIBA MAIS
-              </button>
             </div>
           </div>
         </div>
       </section>
 
-
-
-      {/* About Section - com fundo claro */}
-      <div className="relative z-10 py-20" style={{ backgroundColor: '#FDFAFA' }}>
+      {/* Blog Section 2 - com fundo claro */}
+      <div className="relative z-10 py-20" style={{ backgroundColor: '#F6F1E6' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#2D2E2D] mb-6">
-                Transformando Vidas Através do Desenvolvimento Pessoal
-              </h2>
-              <p className="text-lg text-[#2D2E2D] leading-relaxed mb-6">
-                Na Mind Your Best, acreditamos que cada pessoa tem um potencial ilimitado. 
-                Nossa missão é ajudar você a descobrir e desenvolver esse potencial através 
-                de técnicas comprovadas de alta performance e inteligência emocional.
-              </p>
-              <p className="text-lg text-[#2D2E2D] leading-relaxed mb-8">
-                Com anos de experiência em coaching e desenvolvimento humano, oferecemos 
-                soluções personalizadas que combinam ciência e prática para resultados 
-                reais e duradouros.
-              </p>
-              <button className="bg-[#CFB16D] hover:bg-[#CFB16D] text-[#FDFAFA] font-bold py-3 px-6 rounded-lg transition-colors duration-300">
-                CONHEÇA NOSSA METODOLOGIA
-              </button>
-            </div>
-            <div className="relative">
-              <img 
-                src={homemLendo}
-                alt="Homem refletindo sobre leitura"
-                className="w-full h-96 object-cover rounded-lg shadow-xl"
-              />
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2D2E2D] mb-6">
+              Se você não está satisfeito com quem é hoje, mude.
+            </h2>
+            <p className="text-xl text-[#2D2E2D] max-w-3xl mx-auto">
+              No Holofote acreditamos que cada pessoa tem um potencial a ser desenvolvido.
+            </p>
           </div>
         </div>
       </div>
@@ -140,9 +115,6 @@ const HomePage: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-[#2D2E2D] mb-6">
               Blog
             </h2>
-            <p className="text-xl text-[#2D2E2D] max-w-3xl mx-auto">
-              Conteúdo exclusivo sobre autoconfiança, alta performance e desenvolvimento pessoal
-            </p>
           </div>
           
           <div className="max-w-4xl mx-auto space-y-6">
