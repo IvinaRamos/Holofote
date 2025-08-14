@@ -166,10 +166,19 @@ const BlogDetailPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Excerpt */}
-             <p className="text-lg text-[#2D2E2D] leading-relaxed mb-8 whitespace-pre-line">
-  {post.excerpt}
-</p>
+            {/* Excerpt */}
+<div className="not-prose">
+  {String(post.excerpt || '')
+    .replace(/\\n/g, '\n') // converte \\n para quebra real
+    .split(/\n{2,}/)       // separa por linhas em branco
+    .map((para, i) => (
+      <p key={i} className="text-lg text-[#2D2E2D] leading-relaxed mb-8">
+        {para.trim()}
+      </p>
+    ))
+  }
+</div>
+
                 
                 {/* Placeholder for full content - you can expand this later */}
                 <div className="bg-gray-50 p-6 rounded-lg">
