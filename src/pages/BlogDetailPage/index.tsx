@@ -167,10 +167,9 @@ const BlogDetailPage: React.FC = () => {
               </div>
 
               {/* Excerpt */}
-              <div className="prose prose-lg max-w-none">
-                <p className="text-lg text-[#2D2E2D] leading-relaxed mb-8">
-                  {post.excerpt}
-                </p>
+             <p className="text-lg text-[#2D2E2D] leading-relaxed mb-8 whitespace-pre-line">
+  {post.excerpt}
+</p>
                 
                 {/* Placeholder for full content - you can expand this later */}
                 <div className="bg-gray-50 p-6 rounded-lg">
